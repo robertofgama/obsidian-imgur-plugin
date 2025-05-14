@@ -28,7 +28,7 @@ import buildUploaderFrom from './uploader/imgUploaderFactory'
 import ImgurAuthenticatedUploader from './uploader/imgur/ImgurAuthenticatedUploader'
 import { findLocalFileUnderCursor, replaceFirstOccurrence } from './utils/editor'
 import { allFilesAreImages } from './utils/FileList'
-import { getDateTimeFormated } from './utils/getDateTimeFormated'
+import { getDateTimeFormatted } from './utils/getDateTimeFormatted'
 import { fixImageTypeIfNeeded, removeReferenceIfPresent } from './utils/misc'
 import {
   filesAndLinksStatsFrom,
@@ -403,7 +403,7 @@ export default class ImgurPlugin extends Plugin {
   }
 
   private embedMarkDownImage(pasteId: string, imageUrl: string) {
-    const dateTimeNow = getDateTimeFormated()
+    const dateTimeNow = getDateTimeFormatted()
     const progressText = ImgurPlugin.progressTextFor(pasteId)
     const markDownImage = `![${dateTimeNow}](${imageUrl})`
 
